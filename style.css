@@ -118,8 +118,8 @@ nav a:focus {
         display: inline;
     }
     #form {
-        width: 80vw;
-        height: 80vh;
+        width:100vw;
+        height: 100vh;
         margin: 15vh auto 0 auto;
         padding: 10px;
         background-color: white;
