@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <div class="continar">
+        <nav>
+            <ul>
+            <li><a href="#" class="menu-icon">&#9776;</a></li>
+              <li><a href="signup.html">Sign Up</a></li>
+              <li><a href="login.html">Login</a></li>
+              
+              <div class="right">
+                <li id="username"></li>
+              <li><button id="logoutButton">Logout</button></li>
+              </div>
+              <div class="right dropdown">
+            <div class="dropdown-content">
+                <li id="username"></li>
+                  <a href="signup.html">Sign Up</a>
+                  <a href="login.html">Login</a>
+                  <li><button id="logoutButton">Logout</button></li>
+
+                </div>
+              </div>
+            </ul>
+          </nav>
+
+        
+        <div class="content">
+            <div class="text">
+                <h1><strong>WELCOME!</strong></h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dignissimos, esse, animi iure dolorem at, ipsam a optio provident fugiat accusamus doloremque nobis non. Doloremque voluptatibus, eveniet aliquid aut, reprehenderit deserunt nemo id cumque reiciendis vero necessitatibus. Accusamus, voluptatibus earum magni repudiandae itaque laudantium reprehenderit quidem quasi, doloribus, fugit non.</p>
+            </div>
+            <div class="img">
+                <img src="0c9b89b62ba04b4b4740f4ce2da28b54-removebg-preview.png">
+            </div>
+        </div>
+    </div>
+    <script url="main.js">
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoutB = document.getElementById('logoutButton');
+            if (logoutB) {
+                logoutB.addEventListener('click', function() {
+                    localStorage.removeItem('loggedInUser');
+                    window.location.href = 'login.html';
+                });
+            }
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+    let logU = localStorage.getItem('loggedInUser');
+    let userName = document.querySelector('#username');
+    if (logU && userName) {
+        userName.textContent =  logU;
+        userName.style.color = "white"
+    }
+});
+document.querySelector('.menu-icon').addEventListener('click', function() {
+  document.querySelector('.dropdown').classList.toggle('show-dropdown');
+});
+       
+    </script>
+
+</body>
+</html>
+
